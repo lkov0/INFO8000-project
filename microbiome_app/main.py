@@ -41,6 +41,7 @@ def train_rf(endo):
     plt.ylabel('Features')
     plt.title("Visualizing Important Features - Random Forest")
     plt.savefig("static/img.png",format='png', bbox_inches='tight')
+    plt.clf()
     
     # make venn diagrams
     vdf = pd.read_csv('Microbiome.csv', sep='\t')
@@ -86,6 +87,7 @@ def train_rf(endo):
             c = c + 1
     plt1 = venn2(subsets = (a, c, b), set_labels = ('OTU Present',  v1))
     plt.savefig("static/img_venn1.png")
+    plt.clf()
     
     #V2
     for index, row in vdf.iterrows():
@@ -97,6 +99,7 @@ def train_rf(endo):
             f = f + 1
     plt2 = venn2(subsets = (d, f, e), set_labels = ('OTU Present',  v2))
     plt.savefig("static/img_venn2.png")
+    plt.clf()
     
     #V3
     for index, row in vdf.iterrows():
