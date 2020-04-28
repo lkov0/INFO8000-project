@@ -79,11 +79,11 @@ def train_rf(endo):
 
     #V1
     for index, row in vdf.iterrows():
-        if row['Endo5'] == 1 and row[v1] == 0: 
+        if row[endo] == 1 and row[v1] == 0: 
             a = a + 1
-        if row['Endo5'] == 1 and row[v1] == 1: 
+        if row[endo] == 1 and row[v1] == 1: 
             b = b + 1
-        if row['Endo5'] == 0 and row[v1] == 1: 
+        if row[endo] == 0 and row[v1] == 1: 
             c = c + 1
     plt1 = venn2(subsets = (a, c, b), set_labels = ('OTU Present',  v1))
     plt.savefig("static/img_venn1.png")
@@ -91,11 +91,11 @@ def train_rf(endo):
     
     #V2
     for index, row in vdf.iterrows():
-        if row['Endo5'] == 1 and row[v2] == 0: 
+        if row[endo] == 1 and row[v2] == 0: 
             d = d + 1
-        if row['Endo5'] == 1 and row[v2] == 1: 
+        if row[endo] == 1 and row[v2] == 1: 
             e = e + 1
-        if row['Endo5'] == 0 and row[v2] == 1: 
+        if row[endo] == 0 and row[v2] == 1: 
             f = f + 1
     plt2 = venn2(subsets = (d, f, e), set_labels = ('OTU Present',  v2))
     plt.savefig("static/img_venn2.png")
@@ -103,11 +103,11 @@ def train_rf(endo):
     
     #V3
     for index, row in vdf.iterrows():
-        if row['Endo5'] == 1 and row[v3] == 0: 
+        if row[endo] == 1 and row[v3] == 0: 
             h = h + 1
-        if row['Endo5'] == 1 and row[v3] == 1: 
+        if row[endo] == 1 and row[v3] == 1: 
             i = i + 1
-        if row['Endo5'] == 0 and row[v3] == 1: 
+        if row[endo] == 0 and row[v3] == 1: 
             j = j + 1
     plt3 = venn2(subsets = (h, j, i), set_labels = ('OTU Present',  v3))
     plt.savefig("static/img_venn3.png")
